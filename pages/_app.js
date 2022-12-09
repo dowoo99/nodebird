@@ -1,6 +1,8 @@
 import Prototype from "prop-types";
 import "antd/dist/reset.css";
 import Head from "next/head";
+import wrapper from "../store/configureStore";
+
 const NodeBird = ({ Component }) => {
   return (
     <>
@@ -15,4 +17,4 @@ const NodeBird = ({ Component }) => {
 NodeBird.prototype = {
   Component: Prototype.elementType.isRequired,
 };
-export default NodeBird;
+export default wrapper.withRedux(NodeBird);
